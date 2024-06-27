@@ -5,6 +5,7 @@ delete_source_branch_on_merge: true
 projects:
   - name: terraform-minio
     dir: .
+    terraform_version: v1.7.4
     autoplan:
       when_modified: ["*.tf", "**/*.tf"]
     # plan_requirements: [mergeable, undiverged]
