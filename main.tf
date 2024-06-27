@@ -84,6 +84,19 @@ module "volsync_bucket" {
   username = minio_iam_user.volsync.name
 }
 
+# obsidian-sync
+resource "minio_iam_user" "obsidian_sync" {
+  name         = "obsidian-sync"
+  disable_user = false
+}
+
+module "obsidian_sync" {
+  source   = "./modules/bucket"
+  name     = "obsidian-sync"
+  acl      = "private"
+  username = minio_iam_user.obsidian_sync.name
+}
+
 # cloudnative-pg backups
 resource "minio_iam_user" "cloudnative_pg" {
   name         = "cloudnative-pg"
