@@ -12,7 +12,7 @@ terraform {
     # https://registry.terraform.io/providers/hashicorp/local/latest/docs
     local = {
       source  = "hashicorp/local"
-      version = "2.4.1"
+      version = "2.5.1"
     }
     # https://registry.terraform.io/providers/hashicorp/vault/latest/docs
     vault = {
