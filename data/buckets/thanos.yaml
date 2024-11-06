@@ -1,0 +1,9 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioBucket
+metadata:
+  name: thanos
+spec:
+  acl: private
+  description: thanos metric storage
+  locking: false

@@ -1,0 +1,13 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: loki
+spec:
+  description: loki logging storage
+  disabled: false
+  permissions:
+    - bucket: loki
+      path: "/*"
+      actions:
+        - "*"
