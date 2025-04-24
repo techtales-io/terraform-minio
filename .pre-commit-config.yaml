@@ -1,8 +1,12 @@
 ---
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
 fail_fast: false
+
 default_stages:
   - commit
   - push
+
+exclude: "^assets/"
 
 repos:
   - repo: https://github.com/thlorenz/doctoc
@@ -21,8 +25,8 @@ repos:
     hooks:
       - id: terraform_docs
         args:
-          - --hook-config=--path-to-file=README.md
           - --args=--config=.terraform-docs.yaml
+        files: ^(modules/.*|terraform)/
       - id: terraform_fmt
       - id: terraform_tflint
         args:
@@ -43,6 +47,9 @@ repos:
       - id: check-json
       - id: check-symlinks
       - id: check-xml
+      - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker

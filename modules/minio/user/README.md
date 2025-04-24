@@ -11,7 +11,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.10.5 |
 | <a name="requirement_minio"></a> [minio](#requirement\_minio) | 2.5.1 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | 4.4.0 |
 

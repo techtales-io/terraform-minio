@@ -2,7 +2,7 @@
 # CONFIGURE TERRAFORM
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 terraform {
-  required_version = ">=1.5.0"
+  required_version = ">=1.5.0, <= 1.10.5"
   required_providers {
     # https://registry.terraform.io/providers/aminueza/minio/latest/docs
     minio = {
@@ -20,10 +20,6 @@ terraform {
       version = "4.4.0"
     }
   }
-}
-
-provider "minio" {
-  minio_region = "home"
 }
 
 module "yaml" {
