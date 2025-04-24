@@ -34,13 +34,6 @@ MinIO S3 Server Infrastructure as code with Terraform.
   - [Prerequisties](#prerequisties)
   - [Initialize repository](#initialize-repository)
 - [ENV](#env)
-- [Terraform docs](#terraform-docs)
-  - [Requirements](#requirements)
-  - [Providers](#providers)
-  - [Modules](#modules)
-  - [Resources](#resources)
-  - [Inputs](#inputs)
-  - [Outputs](#outputs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 </details>
@@ -125,81 +118,6 @@ task pre-commit:init
 | `MINIO_USER`            | the minio admin username                |
 | `MINIO_PASSWORD`        | the minio admin password                |
 | `MINIO_ENABLE_HTTPS`    | should be true                          |
-
-## Terraform docs
-
-<!-- prettier-ignore-start -->
-<!-- BEGIN_TF_DOCS -->
-### Requirements
-
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.5.0 |
-| <a name="requirement_local"></a> [local](#requirement\_local) | 2.4.1 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 2.0.1 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 4.2.0 |
-
-### Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_minio"></a> [minio](#provider\_minio) | 2.0.1 |
-
-### Modules
-
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_cloudnative_pg_bucket"></a> [cloudnative\_pg\_bucket](#module\_cloudnative\_pg\_bucket) | ./modules/bucket | n/a |
-| <a name="module_loki_user_bucket"></a> [loki\_user\_bucket](#module\_loki\_user\_bucket) | ./modules/user-bucket | n/a |
-| <a name="module_terraform_user_bucket"></a> [terraform\_user\_bucket](#module\_terraform\_user\_bucket) | ./modules/user-bucket | n/a |
-| <a name="module_thanos_user_bucket"></a> [thanos\_user\_bucket](#module\_thanos\_user\_bucket) | ./modules/user-bucket | n/a |
-| <a name="module_volsync_bucket"></a> [volsync\_bucket](#module\_volsync\_bucket) | ./modules/bucket | n/a |
-
-### Resources
-
-| Name | Type |
-|------|------|
-| [minio_iam_group.child](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group) | resource |
-| [minio_iam_group.parent](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group) | resource |
-| [minio_iam_group_membership.child](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group_membership) | resource |
-| [minio_iam_group_membership.parent](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group_membership) | resource |
-| [minio_iam_group_policy_attachment.backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group_policy_attachment) | resource |
-| [minio_iam_group_policy_attachment.backup_child](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_group_policy_attachment) | resource |
-| [minio_iam_policy.alex_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_policy) | resource |
-| [minio_iam_policy.backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_policy) | resource |
-| [minio_iam_policy.backup_jasmin_phone](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_policy) | resource |
-| [minio_iam_policy.dominik_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_policy) | resource |
-| [minio_iam_policy.nils_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_policy) | resource |
-| [minio_iam_user.alex](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.cloudnative_pg](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.dominik](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.jazzlyn](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.loki](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.terraform](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.thanos](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.tyriis](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user.volsync](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user) | resource |
-| [minio_iam_user_policy_attachment.backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user_policy_attachment) | resource |
-| [minio_iam_user_policy_attachment.backup_alex_phone](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user_policy_attachment) | resource |
-| [minio_iam_user_policy_attachment.backup_dominik_phone](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user_policy_attachment) | resource |
-| [minio_iam_user_policy_attachment.backup_jasmin_phone](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/iam_user_policy_attachment) | resource |
-| [minio_s3_bucket.backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/s3_bucket) | resource |
-| [minio_s3_bucket.gitlab_runner_cache](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/resources/s3_bucket) | resource |
-| [minio_iam_policy_document.alex_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/data-sources/iam_policy_document) | data source |
-| [minio_iam_policy_document.backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/data-sources/iam_policy_document) | data source |
-| [minio_iam_policy_document.backup_jasmin_phone](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/data-sources/iam_policy_document) | data source |
-| [minio_iam_policy_document.dominik_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/data-sources/iam_policy_document) | data source |
-| [minio_iam_policy_document.nils_phone_backup](https://registry.terraform.io/providers/aminueza/minio/2.0.1/docs/data-sources/iam_policy_document) | data source |
-
-### Inputs
-
-No inputs.
-
-### Outputs
-
-No outputs.
-<!-- END_TF_DOCS -->
-<!-- prettier-ignore-end -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
