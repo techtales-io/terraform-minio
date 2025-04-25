@@ -11,10 +11,11 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![nix][nix-shield]][nix-url]
-[![pre-commit][pre-commit-shield]][pre-commit-url]
 [![taskfile][taskfile-shield]][taskfile-url]
+[![pre-commit][pre-commit-shield]][pre-commit-url]
+[![renovate][renovate-shield]][renovate-url]
 [![terraform][terraform-shield]][terraform-url]
+[![Remote State file][statefile-shield]](README.md)
 
 # Terraform MinIO for techtales.io
 
@@ -90,13 +91,16 @@ Pattern: `[a-z_-]+`
 
 ### Prerequisties
 
-- [pre-commit][pre-commit-url]
-- [terraform][terraform-url]
-- [terraform-docs][terraform-docs]
-- [tflint][tflint]
-- [tfsec][tfsec]
+- [task][taskfile-url]
+- [mise][mise-url]
 
 ### Initialize repository
+
+Install dependencies with mise
+
+```console
+mise install
+```
 
 Terraform and pre-commit framework need to get initialized.
 
@@ -109,15 +113,12 @@ task pre-commit:init
 
 | Name                    | Description                             |
 | ----------------------- | --------------------------------------- |
-| `VAULT_TOKEN`           | vault token                             |
+| `VAULT_TOKEN`           | vault token (not required for atlantis) |
+| `VAULT_ADDR`            | the vault address                       |
 | `AWS_ENDPOINT_URL_S3`   | endpoint url for the s3 state backend   |
 | `AWS_REGION`            | region for the s3 state backend         |
 | `AWS_ACCESS_KEY_ID`     | username for the s3 state backend       |
 | `AWS_SECRET_ACCESS_KEY` | password for the s3 state backend       |
-| `MINIO_ENDPOINT`        | the minio endpoint FQDN without http(s) |
-| `MINIO_USER`            | the minio admin username                |
-| `MINIO_PASSWORD`        | the minio admin password                |
-| `MINIO_ENABLE_HTTPS`    | should be true                          |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -125,9 +126,7 @@ task pre-commit:init
 <!-- Links -->
 
 [terraform-best-practices]: https://www.terraform-best-practices.com/naming
-[terraform-docs]: https://github.com/terraform-docs/terraform-docs
-[tflint]: https://github.com/terraform-linters/tflint
-[tfsec]: https://aquasecurity.github.io/tfsec
+[mise-url]: https://mise.jdx.dev/
 
 <!-- Badges -->
 
@@ -137,5 +136,6 @@ task pre-commit:init
 [pre-commit-url]: https://github.com/pre-commit/pre-commit
 [taskfile-shield]: https://img.shields.io/badge/taskfile-enabled-brightgreen?logo=task
 [taskfile-url]: https://taskfile.dev/
-[nix-shield]: https://img.shields.io/badge/nix-enabled-brightgreen?logo=nixos
-[nix-url]: https://search.nixos.org/packages
+[renovate-shield]: https://img.shields.io/badge/renovate-enabled-brightgreen?logo=renovate
+[renovate-url]: https://www.whitesourcesoftware.com/free-developer-tools/renovate/
+[statefile-shield]: https://img.shields.io/badge/minio-tfstate-C72E49?logo=minio&logoColor=C72E49
