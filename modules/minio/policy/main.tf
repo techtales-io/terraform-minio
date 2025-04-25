@@ -18,8 +18,21 @@ data "minio_iam_policy_document" "main" {
 }
 
 resource "minio_iam_policy" "main" {
-  name   = "${var.config.user}-${var.config.bucket}"
-  policy = data.minio_iam_policy_document.main.json
+  name = "${var.config.user}-${var.config.bucket}"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      for statement in data.minio_iam_policy_document.main.statement :
+      {
+        Effect   = "Allow"
+        Action   = statement.actions
+        Resource = statement.resources
+        # Condition = statement.condition
+      }
+    ]
+  })
+  # output of data.minio_iam_policy_document.main.json is creating drifts :(
+  # policy = data.minio_iam_policy_document.main.json
 }
 
 resource "minio_iam_user_policy_attachment" "main" {
