@@ -11,9 +11,9 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.9.0, <= 1.10.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.11.4 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | 2.5.2 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.3.0 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.4.0 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | 4.8.0 |
 
 ## Providers
