@@ -45,3 +45,8 @@ module "bucket_policies" {
   source     = "../../modules/minio/policy"
   config     = each.value
 }
+
+# output "name" {
+#   value = module.yaml.data.manifests
+
+# }

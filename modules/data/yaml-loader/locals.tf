@@ -1,9 +1,9 @@
 locals {
   # Function to read and decode YAML files
   manifests = {
-    for v in fileset("${path.root}/../data", "**/*.yaml") :
-    v => yamldecode(file("${path.root}/../data/${v}"))
-    if try(yamldecode(file("${path.root}/../data/${v}")).metadata.namespace, "") == var.namespace
+    for v in fileset("${path.root}/../../data", "**/*.yaml") :
+    v => yamldecode(file("${path.root}/../../data/${v}"))
+    if try(yamldecode(file("${path.root}/../../data/${v}")).metadata.namespace, "") == var.namespace
   }
 
   # Filter and ogranize server(s)
