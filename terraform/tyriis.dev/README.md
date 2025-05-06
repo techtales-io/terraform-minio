@@ -13,7 +13,7 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.11.4 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | 2.5.2 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.4.0 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.5.0 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | 4.8.0 |
 
 ## Providers
@@ -26,10 +26,10 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_bucket_policies"></a> [bucket\_policies](#module\_bucket\_policies) | ../modules/minio/policy | n/a |
-| <a name="module_buckets"></a> [buckets](#module\_buckets) | ../modules/minio/bucket | n/a |
-| <a name="module_users"></a> [users](#module\_users) | ../modules/minio/user | n/a |
-| <a name="module_yaml"></a> [yaml](#module\_yaml) | ../modules/data/yaml-loader | n/a |
+| <a name="module_bucket_policies"></a> [bucket\_policies](#module\_bucket\_policies) | ../../modules/minio/policy | n/a |
+| <a name="module_buckets"></a> [buckets](#module\_buckets) | ../../modules/minio/bucket | n/a |
+| <a name="module_users"></a> [users](#module\_users) | ../../modules/minio/user | n/a |
+| <a name="module_yaml"></a> [yaml](#module\_yaml) | ../../modules/data/yaml-loader | n/a |
 
 ## Resources
 

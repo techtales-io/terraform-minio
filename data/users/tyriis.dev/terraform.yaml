@@ -2,12 +2,13 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:
-  name: techinik
+  name: terraform
+  namespace: tyriis.dev
 spec:
-  description: techinik backups
+  description: terraform state backend(s)
   disabled: false
   permissions:
-    - bucket: backup
-      path: "/techinik/*"
+    - bucket: terraform
+      path: "/*"
       actions:
         - "*"

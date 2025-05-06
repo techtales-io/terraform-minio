@@ -1,13 +1,10 @@
 ---
 apiVersion: terraform.techtales.io/v1alpha1
-kind: MinioUser
+kind: MinioBucket
 metadata:
   name: thanos
+  namespace: tyriis.dev
 spec:
+  acl: private
   description: thanos metric storage
-  disabled: false
-  permissions:
-    - bucket: thanos
-      path: "/*"
-      actions:
-        - "*"
+  locking: false

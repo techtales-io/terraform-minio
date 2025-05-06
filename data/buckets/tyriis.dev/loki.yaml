@@ -2,8 +2,9 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioBucket
 metadata:
-  name: thanos
+  name: loki
+  namespace: tyriis.dev
 spec:
   acl: private
-  description: thanos metric storage
+  description: loki logs
   locking: false

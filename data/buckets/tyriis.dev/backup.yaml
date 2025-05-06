@@ -2,8 +2,9 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioBucket
 metadata:
-  name: cnpg
+  name: backup
+  namespace: tyriis.dev
 spec:
   acl: private
-  description: clounative pg backups
+  description: user backups
   locking: false
