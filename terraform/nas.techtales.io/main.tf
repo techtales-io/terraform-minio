@@ -23,24 +23,25 @@ terraform {
 }
 
 module "yaml" {
-  source = "../modules/data/yaml-loader"
+  source    = "../../modules/data/yaml-loader"
+  namespace = "nas.techtales.io"
 }
 
 module "users" {
   for_each = module.yaml.data.users
-  source   = "../modules/minio/user"
+  source   = "../../modules/minio/user"
   config   = each.value
 }
 
 module "buckets" {
   for_each = module.yaml.data.buckets
-  source   = "../modules/minio/bucket"
+  source   = "../../modules/minio/bucket"
   config   = each.value
 }
 
 module "bucket_policies" {
   depends_on = [module.buckets, module.users]
   for_each   = module.yaml.data.policies
-  source     = "../modules/minio/policy"
+  source     = "../../modules/minio/policy"
   config     = each.value
 }

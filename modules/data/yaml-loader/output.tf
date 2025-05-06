@@ -1,7 +1,8 @@
 output "data" {
   value = {
-    users    = local.users
-    buckets  = local.buckets
-    policies = local.policies
+    users     = local.users
+    buckets   = local.buckets
+    policies  = local.policies
+    manifests = local.manifests
   }
 }

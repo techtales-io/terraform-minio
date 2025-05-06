@@ -1,13 +1,10 @@
 ---
 apiVersion: terraform.techtales.io/v1alpha1
-kind: MinioUser
+kind: MinioBucket
 metadata:
   name: terraform
+  namespace: tyriis.dev
 spec:
+  acl: private
   description: terraform state backend(s)
-  disabled: false
-  permissions:
-    - bucket: terraform
-      path: "/*"
-      actions:
-        - "*"
+  locking: true

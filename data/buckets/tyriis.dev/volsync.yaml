@@ -2,8 +2,9 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioBucket
 metadata:
-  name: terraform
+  name: volsync
+  namespace: tyriis.dev
 spec:
   acl: private
-  description: terraform state backend(s)
-  locking: true
+  description: volsync backups
+  locking: false

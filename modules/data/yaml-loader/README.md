@@ -27,7 +27,9 @@ No resources.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | The namespace to use for the YAML loader. | `string` | n/a | yes |
 
 ## Outputs
 
