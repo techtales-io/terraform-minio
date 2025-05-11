@@ -8,3 +8,11 @@ rule "terraform_module_pinned_source" {
   style = "flexible"
   default_branches = ["main", "master", "default", "develop"]
 }
+
+rule "terraform_deprecated_interpolation" {
+  enabled = false
+  # needed to disable this rule because module ignore does not work as expected
+  # ignore_modules = {
+  #   "modules/minio/user" = true
+  # }
+}

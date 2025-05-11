@@ -3,11 +3,11 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "terraform_minio" {
-  path = "infra/techtales/terraform-minio"
+  path = "infra/techtales/terraform-minio/nas.techtales.io"
 }
 
 provider "minio" {
-  minio_server      = "s3.nas.techtales.io" # data.vault_generic_secret.terraform_minio.data["minio_server"]
+  minio_server      = data.vault_generic_secret.terraform_minio.data["minio_server"]
   minio_user        = data.vault_generic_secret.terraform_minio.data["minio_user"]
   minio_password    = data.vault_generic_secret.terraform_minio.data["minio_password"]
   minio_region      = "home"

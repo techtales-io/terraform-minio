@@ -33,6 +33,6 @@ resource "vault_generic_secret" "minio_secret" {
   path = "infra/minio/iam/user/${minio_iam_user.main.name}"
 
   data_json = jsonencode({
-    minio_secret = minio_iam_user.main.secret
+    "${var.config.metadata.namespace}" = minio_iam_user.main.secret
   })
 }

@@ -3,7 +3,7 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "terraform_minio" {
-  path = "infra/techtales/terraform-minio"
+  path = "infra/techtales/terraform-minio/tyriis.dev"
 }
 
 provider "minio" {
