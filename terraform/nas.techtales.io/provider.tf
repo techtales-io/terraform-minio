@@ -7,7 +7,7 @@ data "vault_generic_secret" "terraform_minio" {
 }
 
 provider "minio" {
-  minio_server      = "minio.techtales.io" # data.vault_generic_secret.terraform_minio.data["minio_server"]
+  minio_server      = "s3.nas.techtales.io" # data.vault_generic_secret.terraform_minio.data["minio_server"]
   minio_user        = data.vault_generic_secret.terraform_minio.data["minio_user"]
   minio_password    = data.vault_generic_secret.terraform_minio.data["minio_password"]
   minio_region      = "home"
