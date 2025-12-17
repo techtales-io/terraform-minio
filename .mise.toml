@@ -6,6 +6,6 @@ legacy_version_file_disable_tools = ['terraform']
 terraform = "1.12.1"
 trivy = "0.68.1"
 terraform-docs = "0.21.0"
-pre-commit = "4.5.0"
+pre-commit = "4.5.1"
 tflint = "0.60.0"
 direnv = "2.37.1"
