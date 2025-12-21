@@ -2,13 +2,13 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:
-  name: terraform-openbao
+  name: cnpg-nas
   namespace: nas.techtales.io
 spec:
-  description: terraform state backend for terraform-openbao
+  description: cnpg nas backup
   disabled: false
   permissions:
-    - bucket: terraform
-      path: "/openbao/techtales.io/*"
+    - bucket: cnpg
+      path: "/nas/*"
       actions:
         - "*"
