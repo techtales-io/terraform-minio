@@ -30,9 +30,10 @@ resource "minio_iam_user" "main" {
 
 
 resource "vault_generic_secret" "minio_secret" {
-  path = "infra/minio/iam/user/${minio_iam_user.main.name}"
+  path = "infra/minio/iam/${var.config.metadata.namespace}/${minio_iam_user.main.name}"
 
   data_json = jsonencode({
-    "${var.config.metadata.namespace}" = minio_iam_user.main.secret
+    "AWS_ACCESS_KEY_ID"     = minio_iam_user.main.name
+    "AWS_SECRET_ACCESS_KEY" = minio_iam_user.main.secret
   })
 }

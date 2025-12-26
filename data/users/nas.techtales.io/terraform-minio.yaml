@@ -2,13 +2,13 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:
-  name: terraform-openbao
+  name: terraform-minio
   namespace: nas.techtales.io
 spec:
-  description: terraform state backend for terraform-openbao
+  description: terraform state backend for terraform-minio
   disabled: false
   permissions:
     - bucket: terraform
-      path: "/openbao/techtales.io/*"
+      path: "/minio/nas.techtales.io/*"
       actions:
         - "*"

@@ -2,13 +2,13 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:
-  name: crowlexpro
-  namespace: tyriis.dev
+  name: cnpg-nas
+  namespace: nas.techtales.io
 spec:
-  description: crowlexpro backups
+  description: cnpg nas backup
   disabled: false
   permissions:
-    - bucket: backup
-      path: "/crowlexpro/*"
+    - bucket: cnpg
+      path: "/nas/*"
       actions:
         - "*"

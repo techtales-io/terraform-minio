@@ -2,9 +2,9 @@
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioBucket
 metadata:
-  name: cnpg
-  namespace: tyriis.dev
+  name: volsync
+  namespace: nas.techtales.io
 spec:
   acl: private
-  description: clounative pg backups
+  description: volsync pvc backups
   locking: false
