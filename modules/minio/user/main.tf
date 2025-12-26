@@ -10,7 +10,7 @@ terraform {
     # https://registry.terraform.io/providers/hashicorp/vault/latest/docs
     vault = {
       source  = "hashicorp/vault"
-      version = "5.0.0"
+      version = "5.6.0"
     }
   }
 }
