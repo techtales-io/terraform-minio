@@ -13,8 +13,3 @@ projects:
           ../../modules/**/*.tf,
           ../../data/**/nas.techtales.io/*.yaml,
         ]
-
-  # - name: nas.techtales.io
-  #   dir: ./terraform/nas.techtales.io
-  #   autoplan:
-  #     when_modified: ["*.tf", "**/*.tf", ../modules/**/*.tf, ../data/**/nas.techtales.io/*.yaml]
