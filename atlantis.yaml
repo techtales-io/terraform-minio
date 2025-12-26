@@ -10,8 +10,8 @@ projects:
         [
           "*.tf",
           "**/*.tf",
-          ../modules/**/*.tf,
-          ../data/**/nas.techtales.io/*.yaml,
+          ../../modules/**/*.tf,
+          ../../data/**/nas.techtales.io/*.yaml,
         ]
 
   # - name: nas.techtales.io
