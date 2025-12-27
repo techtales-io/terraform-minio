@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: replication
+  namespace: replication.nas.techtales.io
+spec:
+  description: terraform replication user
+  disabled: false
+  permissions:
+    - bucket: terraform
+      path: "*"
+      actions:
+        - "*"
