@@ -9,6 +9,11 @@ spec:
   disabled: false
   permissions:
     - bucket: terraform
-      path: "/openbao/techtales.io/*"
+      path: "/*"
+      actions:
+        - "GetObject"
+        - "ListBucket"
+    - bucket: terraform
+      path: "/openbao/*"
       actions:
         - "*"
