@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: dominik
+  namespace: nas.techtales.io
+spec:
+  description: dominik backup user
+  disabled: false
+  permissions:
+    - bucket: backup
+      path: "/dominik/*"
+      actions:
+        - "*"

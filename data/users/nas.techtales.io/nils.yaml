@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: nils
+  namespace: nas.techtales.io
+spec:
+  description: nils backup user
+  disabled: false
+  permissions:
+    - bucket: backup
+      path: "/nils/*"
+      actions:
+        - "*"
