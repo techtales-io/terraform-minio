@@ -20,20 +20,35 @@ locals {
     if v.kind == "MinioUser"
   }
 
-  # Filter and re-structure permission policies
-  policies = merge(flatten([
+  # Filter and re-structure permission policies - group by user+bucket
+  policies_grouped = {
     for v in local.manifests :
-    v.kind == "MinioUser" ? [
-      {
-        for permission in v.spec.permissions :
-        "policy_${v.metadata.name}_${permission.bucket}" => {
-          bucket    = permission.bucket
-          user      = v.metadata.name
-          actions   = [for action in permission.actions : "s3:${action}"]
-          resources = ["arn:aws:s3:::${permission.bucket}${permission.path}"]
+    v.metadata.name => {
+      user = v.metadata.name
+      permissions_by_bucket = {
+        for permission in try(v.spec.permissions, []) :
+        permission.bucket => permission...
+      }
+    }
+    if v.kind == "MinioUser" && try(length(v.spec.permissions), 0) > 0
+  }
+
+  # Flatten into policy objects with multiple statements per user+bucket combination
+  policies = merge(flatten([
+    for user_name, user_data in local.policies_grouped : [
+      for bucket_name, permissions in user_data.permissions_by_bucket : {
+        "policy_${user_name}_${bucket_name}" = {
+          bucket = bucket_name
+          user   = user_name
+          statements = [
+            for permission in permissions : {
+              actions   = [for action in permission.actions : "s3:${action}"]
+              resources = ["arn:aws:s3:::${bucket_name}${permission.path}"]
+            }
+          ]
         }
       }
-    ] : []
+    ]
   ])...)
 
 }
