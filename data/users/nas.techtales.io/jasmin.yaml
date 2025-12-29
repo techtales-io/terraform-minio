@@ -9,6 +9,11 @@ spec:
   disabled: false
   permissions:
     - bucket: backup
+      path: "/*"
+      actions:
+        - "GetObject"
+        - "ListBucket"
+    - bucket: backup
       path: "/jasmin/*"
       actions:
         - "*"
