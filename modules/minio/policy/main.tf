@@ -11,9 +11,12 @@ terraform {
 }
 
 data "minio_iam_policy_document" "main" {
-  statement {
-    actions   = var.config.actions
-    resources = var.config.resources
+  dynamic "statement" {
+    for_each = var.config.statements
+    content {
+      actions   = statement.value.actions
+      resources = statement.value.resources
+    }
   }
 }
 

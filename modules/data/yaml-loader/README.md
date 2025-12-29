@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD028 -->
+<!-- markdownlint-disable MD060 -->
 
 # TF DOCS
 
@@ -11,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.11.4 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.14.3 |
 
 ## Providers
 

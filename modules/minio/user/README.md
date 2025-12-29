@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD028 -->
+<!-- markdownlint-disable MD060 -->
 
 # TF DOCS
 
@@ -11,16 +12,16 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.12.1 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.5.2 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 5.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.14.3 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.12.0 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 5.6.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.5.2 |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | 5.0.0 |
+| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.12.0 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 5.6.0 |
 
 ## Modules
 
@@ -30,8 +31,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [minio_iam_user.main](https://registry.terraform.io/providers/aminueza/minio/3.5.2/docs/resources/iam_user) | resource |
-| [vault_generic_secret.minio_secret](https://registry.terraform.io/providers/hashicorp/vault/5.0.0/docs/resources/generic_secret) | resource |
+| [minio_iam_user.main](https://registry.terraform.io/providers/aminueza/minio/3.12.0/docs/resources/iam_user) | resource |
+| [vault_generic_secret.minio_secret](https://registry.terraform.io/providers/hashicorp/vault/5.6.0/docs/resources/generic_secret) | resource |
 
 ## Inputs
 
