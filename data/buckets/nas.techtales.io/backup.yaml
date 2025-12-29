@@ -1,0 +1,10 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioBucket
+metadata:
+  name: backup
+  namespace: nas.techtales.io
+spec:
+  acl: private
+  description: user backups
+  locking: false
