@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: terraform-gcloud
+  namespace: nas.techtales.io
+spec:
+  description: terraform state backend for terraform-gcloud
+  disabled: false
+  permissions:
+    - bucket: terraform
+      path: "/gcloud/*"
+      actions:
+        - "*"
