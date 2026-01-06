@@ -9,9 +9,8 @@ spec:
   disabled: false
   permissions:
     - bucket: volsync
-      path: "/kube-lab/media/*"
+      path: "/*"
       actions:
-        - "GetObject"
         - "ListBucket"
     - bucket: volsync
       path: "/kube-lab/media/bazarr-config/*"
