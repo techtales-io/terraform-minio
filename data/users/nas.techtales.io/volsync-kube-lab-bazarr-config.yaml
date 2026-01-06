@@ -8,7 +8,7 @@ spec:
   description: volsync kube-lab backup account
   disabled: false
   permissions:
-    - bucket: terraform
+    - bucket: volsync
       path: "/kube-lab/media/*"
       actions:
         - "GetObject"
