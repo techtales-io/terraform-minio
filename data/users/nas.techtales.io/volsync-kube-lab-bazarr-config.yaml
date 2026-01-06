@@ -8,6 +8,11 @@ spec:
   description: volsync kube-lab backup account
   disabled: false
   permissions:
+    - bucket: terraform
+      path: "/kube-lab/media/*"
+      actions:
+        - "GetObject"
+        - "ListBucket"
     - bucket: volsync
       path: "/kube-lab/media/bazarr-config/*"
       actions:
