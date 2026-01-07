@@ -1,0 +1,20 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: volsync-kube-lab-gatus-data
+  namespace: nas.techtales.io
+spec:
+  description: volsync kube-lab backup account
+  disabled: false
+  permissions:
+    - bucket: volsync
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: volsync
+      path: /kube-lab/observability/gatus-data/*
+      actions:
+        - GetObject
+        - PutObject
+        - DeleteObject
