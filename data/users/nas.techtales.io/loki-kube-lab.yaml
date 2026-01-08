@@ -8,11 +8,7 @@ spec:
   description: loki s3 backend for kube-lab
   disabled: false
   permissions:
-    - bucket: loki
+    - bucket: loki-kube-lab
       path: /*
-      actions:
-        - ListBucket
-    - bucket: loki
-      path: "/kube-lab/*"
       actions:
         - "*"
