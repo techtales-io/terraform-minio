@@ -9,6 +9,6 @@ spec:
   disabled: false
   permissions:
     - bucket: terraform
-      path: /harbor/nas.techtales.io/*
+      path: /harbor/*
       actions:
         - "*"
