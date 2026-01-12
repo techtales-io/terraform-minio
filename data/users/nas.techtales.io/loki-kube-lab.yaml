@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: loki-kube-lab
+  namespace: nas.techtales.io
+spec:
+  description: loki s3 backend for kube-lab
+  disabled: false
+  permissions:
+    - bucket: loki-kube-lab
+      path: /*
+      actions:
+        - "*"

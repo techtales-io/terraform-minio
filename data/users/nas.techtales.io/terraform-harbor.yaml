@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: terraform-harbor
+  namespace: nas.techtales.io
+spec:
+  description: terraform state backend for terraform-harbor
+  disabled: false
+  permissions:
+    - bucket: terraform
+      path: /harbor/*
+      actions:
+        - "*"

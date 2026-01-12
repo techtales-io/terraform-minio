@@ -1,0 +1,10 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioBucket
+metadata:
+  name: loki-kube-lab
+  namespace: nas.techtales.io
+spec:
+  acl: private
+  description: loki backend
+  locking: false
