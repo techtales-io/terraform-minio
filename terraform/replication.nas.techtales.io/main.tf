@@ -2,7 +2,7 @@
 # CONFIGURE TERRAFORM
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 terraform {
-  required_version = ">= 1.9.0, <= 1.14.4"
+  required_version = ">= 1.9.0, <= 1.14.5"
   required_providers {
     # https://registry.terraform.io/providers/aminueza/minio/latest/docs
     minio = {
