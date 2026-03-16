@@ -1,0 +1,20 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: litestream-pocket-id
+  namespace: nas.techtales.io
+spec:
+  description: litestream backup account
+  disabled: false
+  permissions:
+    - bucket: litestream
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: litestream
+      path: /pocket-id/*
+      actions:
+        - GetObject
+        - PutObject
+        - DeleteObject
