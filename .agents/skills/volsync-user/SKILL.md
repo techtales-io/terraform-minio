@@ -100,7 +100,8 @@ After changes are ready:
 - Use lowercase only
 - Use `-` as separator
 - Do not use `_`
-- Commit changes with a clear message
+- Commit changes with a clear message and a scope: `feat(users): <message>`
 - Push branch to origin
+- Show the PR Link
 
 Suggested topic: `volsync-backup-user-<cluster>-<volume>`
