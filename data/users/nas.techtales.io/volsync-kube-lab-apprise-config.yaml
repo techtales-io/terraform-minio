@@ -8,11 +8,11 @@ spec:
   description: volsync kube-lab backup account
   disabled: false
   permissions:
-    - bucket: backup
+    - bucket: volsync
       path: /*
       actions:
         - ListBucket
-    - bucket: backup
+    - bucket: volsync
       path: /kube-lab/notification/apprise-config/*
       actions:
         - GetObject
