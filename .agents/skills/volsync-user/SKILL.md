@@ -1,4 +1,4 @@
-# Volsync user skill (backup bucket)
+# Volsync user skill (volsync bucket)
 
 Create or update MinIO manifests for a Volsync user in `data/users/nas.techtales.io` with access to the `backup` bucket.
 
@@ -6,7 +6,7 @@ Create or update MinIO manifests for a Volsync user in `data/users/nas.techtales
 
 - Add a new `MinioUser` manifest in `data/users/nas.techtales.io`.
 - Ensure it follows the existing Volsync naming conventions.
-- Ensure `backup` bucket manifest exists in `data/buckets/nas.techtales.io`.
+- Ensure `volsync` bucket manifest exists in `data/buckets/nas.techtales.io`.
 - If missing, create the bucket manifest.
 - Use git workflow: sync latest `main`, create `feature/<topic>` branch, commit, push.
 
@@ -46,11 +46,11 @@ spec:
   description: volsync <cluster> backup account
   disabled: false
   permissions:
-    - bucket: backup
+    - bucket: volsync
       path: /*
       actions:
         - ListBucket
-    - bucket: backup
+    - bucket: volsync
       path: /<cluster>/<path-segment>/<volume>/*
       actions:
         - GetObject
@@ -63,9 +63,9 @@ Notes:
 - Keep style aligned with existing Volsync files.
 - If user gives a custom prefix path, replace `/<cluster>/<path-segment>/<volume>/*` accordingly.
 
-## Backup bucket existence check
+## volsync bucket existence check
 
-Check whether `data/buckets/nas.techtales.io/backup.yaml` exists.
+Check whether `data/buckets/nas.techtales.io/volsync.yaml` exists.
 
 - If it exists: do nothing.
 - If missing: create it with:
@@ -75,11 +75,11 @@ Check whether `data/buckets/nas.techtales.io/backup.yaml` exists.
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioBucket
 metadata:
-  name: backup
+  name: volsync
   namespace: nas.techtales.io
 spec:
   acl: private
-  description: user backups
+  description: volsync pvc backups
   locking: false
 ```
 
@@ -87,7 +87,7 @@ spec:
 
 - File path and `metadata.name` match exactly.
 - `namespace` is `nas.techtales.io`.
-- Bucket name is `backup` in all permissions.
+- Bucket name is `volsync` in all permissions.
 - Prefix path is scoped to the specific volume.
 - YAML is valid and consistent with repository formatting.
 
