@@ -2,7 +2,7 @@
 # CONFIGURE TERRAFORM
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 terraform {
-  required_version = ">= 1.9.0, <= 1.14.8"
+  required_version = ">= 1.9.0, <= 1.14.7"
   required_providers {
     # https://registry.terraform.io/providers/aminueza/minio/latest/docs
     minio = {
@@ -16,10 +16,9 @@ terraform {
     }
   }
 }
-
 module "yaml" {
   source    = "../../modules/data/yaml-loader"
-  namespace = "replication.nas.techtales.io"
+  namespace = "synology.techtales.io"
 }
 
 module "users" {

@@ -3,7 +3,7 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "terraform_minio" {
-  path = "infra/techtales/terraform-minio/replication.nas.techtales.io"
+  path = "infra/techtales/terraform-minio/synology.techtales.io"
 }
 
 provider "minio" {
