@@ -7,4 +7,4 @@ metadata:
 spec:
   acl: private
   description: user backups
-  locking: true
+  locking: false
