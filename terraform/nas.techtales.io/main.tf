@@ -67,3 +67,24 @@ resource "minio_s3_bucket_replication" "terraform" {
     module.buckets["terraform"]
   ]
 }
+
+resource "minio_s3_bucket_replication" "backup" {
+  bucket = module.buckets["backup"].data.bucket
+
+
+  rule {
+    delete_replication          = true
+    delete_marker_replication   = true
+    existing_object_replication = true
+    metadata_sync               = true
+
+    target {
+      bucket          = "backup"
+      secure          = true
+      host            = data.vault_generic_secret.terraform_minio.data["replication_server"]
+      bandwidth_limit = "1000M"
+      access_key      = data.vault_generic_secret.terraform_minio.data["replication_user"]
+      secret_key      = data.vault_generic_secret.terraform_minio.data["replication_password"]
+    }
+  }
+}
