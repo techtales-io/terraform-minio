@@ -1,0 +1,20 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: volsync-kube-lab-hermes-agent-jazzlyn-data
+  namespace: nas.techtales.io
+spec:
+  description: volsync kube-lab backup account for hermes-agent-jazzlyn
+  disabled: false
+  permissions:
+    - bucket: volsync
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: volsync
+      path: /kube-lab/hermes-agent/hermes-agent-jazzlyn-data/*
+      actions:
+        - GetObject
+        - PutObject
+        - DeleteObject
