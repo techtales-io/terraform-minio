@@ -1,7 +1,5 @@
-<!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD028 -->
-<!-- markdownlint-disable MD060 -->
+<!-- markdownlint-disable MD041 -->
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -24,6 +22,7 @@ MinIO S3 Server Infrastructure as code with Terraform.
 
 <details>
   <summary style="font-size:1.2em;">Table of Contents</summary>
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 

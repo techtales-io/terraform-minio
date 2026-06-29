@@ -1,31 +1,29 @@
-<!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD028 -->
-<!-- markdownlint-disable MD060 -->
+<!-- markdownlint-disable MD041 -->
 
 # TF DOCS
 
+<!-- markdownlint-disable -->
 <!-- prettier-ignore-start -->
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.14.7 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.28.1 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 5.8.0 |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.15.7 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.38.1 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 5.10.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_vault"></a> [vault](#provider\_vault) | 5.8.0 |
+| ---- | ------- |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 5.10.1 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_bucket_policies"></a> [bucket\_policies](#module\_bucket\_policies) | ../../modules/minio/policy | n/a |
 | <a name="module_buckets"></a> [buckets](#module\_buckets) | ../../modules/minio/bucket | n/a |
 | <a name="module_users"></a> [users](#module\_users) | ../../modules/minio/user | n/a |
@@ -34,8 +32,8 @@
 ## Resources
 
 | Name | Type |
-|------|------|
-| [vault_generic_secret.terraform_minio](https://registry.terraform.io/providers/hashicorp/vault/5.8.0/docs/data-sources/generic_secret) | data source |
+| ---- | ---- |
+| [vault_generic_secret.terraform_minio](https://registry.terraform.io/providers/hashicorp/vault/5.10.1/docs/data-sources/generic_secret) | data source |
 
 ## Inputs
 
@@ -45,5 +43,5 @@ No inputs.
 
 No outputs.
 <!-- END_TF_DOCS -->
-
 <!-- prettier-ignore-end -->
+<!-- markdownlint-enable -->
