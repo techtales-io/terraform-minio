@@ -1,11 +1,11 @@
 terraform {
-  required_version = ">= 1.9.0, <= 1.15.7"
+  required_version = ">= 1.9.0, <= 1.15.8"
 
   required_providers {
     # https://registry.terraform.io/providers/aminueza/minio/latest/docs
     minio = {
       source  = "aminueza/minio"
-      version = "3.38.1"
+      version = "3.38.3"
     }
   }
 }
