@@ -10,15 +10,15 @@
 
 | Name | Version |
 | ---- | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.15.7 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.38.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.15.8 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.38.3 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | 5.10.1 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.38.1 |
+| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.38.3 |
 | <a name="provider_vault"></a> [vault](#provider\_vault) | 5.10.1 |
 
 ## Modules
@@ -34,8 +34,8 @@
 
 | Name | Type |
 | ---- | ---- |
-| [minio_s3_bucket_replication.backup](https://registry.terraform.io/providers/aminueza/minio/3.38.1/docs/resources/s3_bucket_replication) | resource |
-| [minio_s3_bucket_replication.terraform](https://registry.terraform.io/providers/aminueza/minio/3.38.1/docs/resources/s3_bucket_replication) | resource |
+| [minio_s3_bucket_replication.backup](https://registry.terraform.io/providers/aminueza/minio/3.38.3/docs/resources/s3_bucket_replication) | resource |
+| [minio_s3_bucket_replication.terraform](https://registry.terraform.io/providers/aminueza/minio/3.38.3/docs/resources/s3_bucket_replication) | resource |
 | [vault_generic_secret.terraform_minio](https://registry.terraform.io/providers/hashicorp/vault/5.10.1/docs/data-sources/generic_secret) | data source |
 
 ## Inputs

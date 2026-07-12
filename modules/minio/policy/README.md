@@ -10,14 +10,14 @@
 
 | Name | Version |
 | ---- | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.15.7 |
-| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.38.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.15.8 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.38.3 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.38.1 |
+| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.38.3 |
 
 ## Modules
 
@@ -27,9 +27,9 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [minio_iam_policy.main](https://registry.terraform.io/providers/aminueza/minio/3.38.1/docs/resources/iam_policy) | resource |
-| [minio_iam_user_policy_attachment.main](https://registry.terraform.io/providers/aminueza/minio/3.38.1/docs/resources/iam_user_policy_attachment) | resource |
-| [minio_iam_policy_document.main](https://registry.terraform.io/providers/aminueza/minio/3.38.1/docs/data-sources/iam_policy_document) | data source |
+| [minio_iam_policy.main](https://registry.terraform.io/providers/aminueza/minio/3.38.3/docs/resources/iam_policy) | resource |
+| [minio_iam_user_policy_attachment.main](https://registry.terraform.io/providers/aminueza/minio/3.38.3/docs/resources/iam_user_policy_attachment) | resource |
+| [minio_iam_policy_document.main](https://registry.terraform.io/providers/aminueza/minio/3.38.3/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
