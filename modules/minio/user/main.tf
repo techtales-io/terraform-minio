@@ -5,7 +5,7 @@ terraform {
     # https://registry.terraform.io/providers/aminueza/minio/latest/docs
     minio = {
       source  = "aminueza/minio"
-      version = "3.38.3"
+      version = "3.38.4"
     }
     # https://registry.terraform.io/providers/hashicorp/vault/latest/docs
     vault = {
