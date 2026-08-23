@@ -8,7 +8,7 @@ spec:
   description: tempo backend for main
   disabled: false
   permissions:
-    - bucket: tempo-main
-      path: /*
+    - bucket: tempo
+      path: /main/*
       actions:
         - "*"
