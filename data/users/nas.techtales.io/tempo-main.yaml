@@ -9,6 +9,10 @@ spec:
   disabled: false
   permissions:
     - bucket: tempo
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: tempo
       path: /main/*
       actions:
         - "*"
