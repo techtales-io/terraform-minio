@@ -9,6 +9,10 @@ spec:
   disabled: false
   permissions:
     - bucket: cnpg
-      path: "/nas/*"
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: cnpg
+      path: /nas/*
       actions:
         - "*"
