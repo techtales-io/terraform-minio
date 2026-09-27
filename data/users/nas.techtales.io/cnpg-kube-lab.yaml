@@ -9,6 +9,10 @@ spec:
   disabled: false
   permissions:
     - bucket: cnpg
-      path: "/kube-lab/*"
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: cnpg
+      path: /kube-lab/*
       actions:
         - "*"
