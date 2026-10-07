@@ -1,0 +1,20 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: volsync-utility-opengist-data
+  namespace: nas.techtales.io
+spec:
+  description: volsync utility backup account
+  disabled: false
+  permissions:
+    - bucket: volsync
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: volsync
+      path: /utility/git-system/opengist-data/*
+      actions:
+        - GetObject
+        - PutObject
+        - DeleteObject
