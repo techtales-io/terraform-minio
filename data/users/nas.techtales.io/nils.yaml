@@ -17,3 +17,7 @@ spec:
       path: "/nils/*"
       actions:
         - "*"
+    - bucket: test
+      path: "/*"
+      actions:
+        - "*"
