@@ -20,6 +20,13 @@ locals {
     if v.kind == "MinioUser"
   }
 
+  # Filter and organize admin policies
+  admin_policies = {
+    for v in local.manifests :
+    v.metadata.name => v
+    if v.kind == "MinioAdminPolicy"
+  }
+
   # Filter and re-structure permission policies - group by user+bucket
   policies_grouped = {
     for v in local.manifests :

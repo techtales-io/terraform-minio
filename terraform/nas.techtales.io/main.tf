@@ -41,6 +41,13 @@ module "bucket_policies" {
   config     = each.value
 }
 
+module "admin_policies" {
+  depends_on = [module.users]
+  for_each   = module.yaml.data.admin_policies
+  source     = "../../modules/minio/admin-policy"
+  config     = each.value
+}
+
 ###### replication test
 
 resource "minio_s3_bucket_replication" "terraform" {
