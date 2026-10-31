@@ -1,0 +1,14 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioAdminPolicy
+metadata:
+  name: prometheus-metrics
+  namespace: nas.techtales.io
+spec:
+  user: prometheus-metrics
+  description: allow the metrics scrape token to read /minio/metrics/v3
+  statements:
+    - actions:
+        - admin:Prometheus
+      resources:
+        - "arn:aws:s3:::*"

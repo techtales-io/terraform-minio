@@ -69,6 +69,14 @@ Example: k3s.home/node-red/data
 
 ToDo: check if it would be better to create a bucket for each service
 
+#### Admin policies
+
+`MinioAdminPolicy` attaches server level statements to an existing `MinioUser`. All actions must be `admin:` prefixed;
+bucket scoped access belongs to the `permissions` of a `MinioUser` instead.
+
+The bearer token for metrics scraping is minted from that user's credentials with
+`mc admin prometheus generate <alias> --api-version v3` and is therefore not managed here.
+
 ## Usage
 
 \*various commands

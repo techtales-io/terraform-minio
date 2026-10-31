@@ -39,3 +39,10 @@ module "bucket_policies" {
   source     = "../../modules/minio/policy"
   config     = each.value
 }
+
+module "admin_policies" {
+  depends_on = [module.users]
+  for_each   = module.yaml.data.admin_policies
+  source     = "../../modules/minio/admin-policy"
+  config     = each.value
+}

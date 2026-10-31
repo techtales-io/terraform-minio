@@ -1,0 +1,47 @@
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+
+# TF DOCS
+
+<!-- markdownlint-disable -->
+<!-- prettier-ignore-start -->
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0, <= 1.17.1 |
+| <a name="requirement_minio"></a> [minio](#requirement\_minio) | 3.45.1 |
+
+## Providers
+
+| Name | Version |
+| ---- | ------- |
+| <a name="provider_minio"></a> [minio](#provider\_minio) | 3.45.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+| ---- | ---- |
+| [minio_iam_policy.main](https://registry.terraform.io/providers/aminueza/minio/3.45.1/docs/resources/iam_policy) | resource |
+| [minio_iam_user_policy_attachment.main](https://registry.terraform.io/providers/aminueza/minio/3.45.1/docs/resources/iam_user_policy_attachment) | resource |
+| [minio_iam_policy_document.main](https://registry.terraform.io/providers/aminueza/minio/3.45.1/docs/data-sources/iam_policy_document) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+| ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_config"></a> [config](#input\_config) | n/a | <pre>object({<br/>    apiVersion = string<br/>    kind       = string<br/>    metadata = object({<br/>      name      = string<br/>      namespace = optional(string)<br/>    })<br/>    spec = object({<br/>      user        = string<br/>      description = optional(string)<br/>      statements = list(object({<br/>        actions   = list(string)<br/>        resources = list(string)<br/>      }))<br/>    })<br/>  })</pre> | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+| ---- | ----------- |
+| <a name="output_data"></a> [data](#output\_data) | n/a |
+<!-- END_TF_DOCS -->
+<!-- prettier-ignore-end -->
+<!-- markdownlint-enable -->

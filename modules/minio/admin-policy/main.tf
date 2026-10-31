@@ -1,0 +1,44 @@
+terraform {
+  required_version = ">= 1.9.0, <= 1.17.1"
+
+  required_providers {
+    # https://registry.terraform.io/providers/aminueza/minio/latest/docs
+    minio = {
+      source  = "aminueza/minio"
+      version = "3.45.1"
+    }
+  }
+}
+
+data "minio_iam_policy_document" "main" {
+  dynamic "statement" {
+    for_each = var.config.spec.statements
+    content {
+      actions   = statement.value.actions
+      resources = statement.value.resources
+    }
+  }
+}
+
+resource "minio_iam_policy" "main" {
+  name = var.config.metadata.name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      for statement in data.minio_iam_policy_document.main.statement :
+      {
+        Effect   = "Allow"
+        Action   = statement.actions
+        Resource = statement.resources
+        # Condition = statement.condition
+      }
+    ]
+  })
+  # output of data.minio_iam_policy_document.main.json is creating drifts :(
+  # policy = data.minio_iam_policy_document.main.json
+}
+
+resource "minio_iam_user_policy_attachment" "main" {
+  user_name   = var.config.spec.user
+  policy_name = minio_iam_policy.main.name
+}
