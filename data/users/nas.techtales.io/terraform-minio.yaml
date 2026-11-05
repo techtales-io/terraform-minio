@@ -12,3 +12,7 @@ spec:
       path: "/minio/nas.techtales.io/*"
       actions:
         - "*"
+    - bucket: terraform
+      path: "/minio/synology.techtales.io/*"
+      actions:
+        - "*"
