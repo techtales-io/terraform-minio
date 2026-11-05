@@ -13,3 +13,13 @@ projects:
           ../../modules/**/*.tf,
           ../../data/**/nas.techtales.io/*.yaml,
         ]
+  - name: synology.techtales.io
+    dir: ./terraform/synology.techtales.io
+    autoplan:
+      when_modified:
+        [
+          "*.tf",
+          "**/*.tf",
+          ../../modules/**/*.tf,
+          ../../data/**/synology.techtales.io/*.yaml,
+        ]
