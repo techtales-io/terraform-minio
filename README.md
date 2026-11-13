@@ -65,7 +65,7 @@ K8s services will access buckets by the following pattern:
 
 > $CLUSTER/$SERVICE/\*
 
-Example: k3s.home/node-red/data
+Example: k3s.home/n8n/data
 
 ToDo: check if it would be better to create a bucket for each service
 
