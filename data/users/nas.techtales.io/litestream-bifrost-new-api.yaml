@@ -1,0 +1,20 @@
+---
+apiVersion: terraform.techtales.io/v1alpha1
+kind: MinioUser
+metadata:
+  name: litestream-bifrost-new-api
+  namespace: nas.techtales.io
+spec:
+  description: litestream backup account for bifrost new-api
+  disabled: false
+  permissions:
+    - bucket: litestream
+      path: /*
+      actions:
+        - ListBucket
+    - bucket: litestream
+      path: /bifrost/*
+      actions:
+        - GetObject
+        - PutObject
+        - DeleteObject
