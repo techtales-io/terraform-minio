@@ -1,4 +1,5 @@
 ---
+# Recovery identity: read-only restore key, used from a clean machine, never resident on a host.
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:

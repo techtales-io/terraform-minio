@@ -1,4 +1,5 @@
 ---
+# Writer identity: delete-capable backup key, resident on the source host only.
 apiVersion: terraform.techtales.io/v1alpha1
 kind: MinioUser
 metadata:
